@@ -21,6 +21,11 @@ body {
 	width: 100%;
 }
 
+html {
+	height: 100%;
+	width: 100%;
+}
+
 input,button,textarea {font-family:inherit;}
 input::-ms-clear {display: none;}
 a {cursor: pointer;}
@@ -93,7 +98,33 @@ header {
 	content: url('../svg/header/03_clock.svg');
 }
 
+.map p {
+    cursor: pointer;
+}
+.map {
+    position: relative;
+}
+.map_active {
+    display: none;
+    position: absolute;
+	top: 15px;
+	left: -130px;
+	border: 1px solid #CFA5A5;
+}
+.map_active iframe {
+    display: block;
+}
+.map:hover .map_active {
+	display: block; 
+	z-index: 3000;
+	
+}
+
 /* MAIN */
+
+main {
+	flex: 1 1 auto;
+}
 
 /* menu */
 .main-nav {
@@ -122,7 +153,7 @@ header {
 }
 
 .nav-logo {
-	margin-left: 110px;
+	margin-left: 70px;
 }
 
 .nav-acc {
@@ -164,12 +195,12 @@ input {
 
 .nav-search button {
 	width: 40px;
-	height: 40px;
+	height: 41px;
 	background: none;
 	border-radius: 46px;
 	border: 1px solid #BDBDBD;
 	position: absolute;
-	left: 188px;
+	left: 200px;
 	content: "\f002";
 }
 .nav-search button::before {
@@ -188,10 +219,6 @@ input {
 	content: url('../svg/main_acc/03_basket.svg');
 	vertical-align: middle;
 	padding-right: 8px;
-}
-
-main {
-	flex: 1 0 auto;
 }
 
 /* advertisement */
@@ -395,10 +422,28 @@ main {
 
 /* catalogue */
 
+.catalogue {
+	position: relative;
+}
+
 .catalogue h1 {
 	text-align: center;
 	margin: 64px 0;
 }
+
+.catalogue_text {
+	position: absolute;
+	top: -90px;
+	left: -51px;
+	font-family: 'Spectral SC';
+	font-weight: 300;
+	font-size: 245px;
+	line-height: 350px;
+	text-transform: uppercase;
+	color: rgba(94, 92, 90, 0.03);
+	cursor: default;
+}
+
 .catalogue_container {
 	display: grid;
 	grid-template-columns: repeat(4, 375px);
@@ -436,7 +481,7 @@ main {
 	line-height: 30px;
 	text-transform: uppercase;
 	color: #424242;
-	padding: 34px 186px 4px 32px;
+	padding: 34px 100px 4px 32px;
 }
 
 .catalogue_block p {
@@ -487,26 +532,26 @@ main {
 
 /* about */
 
-.about h1 {
+.advantages h1 {
 	margin: 64px 0 64px;
 	text-align: center;
 
 }
 
-.about_flex {
+.advantages_flex {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	margin-bottom: 64px;
 }
 
-.about_block {
+.advantages_block {
 	width: 470px;
 	height: 111px;
 	clear: both;
 }
 
-.about_block h3 {
+.advantages_block h3 {
 	font-weight: 500;
 	font-size: 24px;
 	line-height: 37px;
@@ -514,30 +559,48 @@ main {
 	color: #424242;
 }
 
-.about_block p {
+.advantages_block p {
 	line-height: 22px;
 	color: #424242;
 }
 
-.about_1::before {
+.advantages_1::before {
 	content: url('../svg/about_block/01.svg');
 	float: left;
 	margin-right: 22px;
 }
-.about_2::before {
+.advantages_2::before {
 	content: url('../svg/about_block/02.svg');
 	float: left;
 	margin-right: 22px;
 }
-.about_3::before {
+.advantages_3::before {
 	content: url('../svg/about_block/03.svg');
 	float: left;
 	margin-right: 22px;
 }
 
+/* instagram */
 .insta h1 {
 	margin-bottom: 64px;
 	text-align: center;
+}
+
+.insta {
+	position: relative;
+}
+
+.insta_text {
+	position: absolute;
+	top:-90px;
+	left:-10px;
+	font-family: 'Spectral SC';
+	font-weight: 300;
+	font-size: 245px;
+	line-height: 350px;
+	text-transform: uppercase;
+	color: rgba(94, 92, 90, 0.03);
+	cursor: default;
 }
 
 .insta_grid {
@@ -573,3 +636,321 @@ main {
 .insta_item_f {
 	grid-area: f;
 }
+
+
+
+.insta a {
+	font-weight: 600px;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	padding: 13px 45px;
+	background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+	border-radius: 49px;
+}
+
+.insta p {
+	text-align: center;
+	margin-bottom: 64px;
+}
+
+/* question */
+
+.question {
+	margin: 0 auto 64px;
+	position: relative;
+}
+
+.question h1 {
+	text-align: center;
+	margin: 64px 0;
+}
+
+.question_text {
+	position: absolute;
+	top:-100px;
+	left:-500px;
+	font-family: 'Spectral SC';
+	font-weight: 300;
+	font-size: 245px;
+	line-height: 350px;
+	text-transform: uppercase;
+	color: rgba(94, 92, 90, 0.03);
+	z-index: -1;
+	cursor: default;
+}
+
+.question input {
+	width: 131px;
+	height: 50px;
+	padding: 0 32px 0 32px;
+	margin-right: 32px;
+
+}
+
+.question button {
+	width: 195px;
+	height: 50px;
+	background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+	border-radius: 49px;
+	color: #ffffff;
+}
+
+.question_text_2 {
+	font-size: 12px;
+	line-height: 17px;
+	color: #525252;
+	margin-top: 8px;
+	margin-left: 470px;
+}
+
+/* Footer */
+
+footer {
+	flex: 0 0 auto;
+	height: 380px;
+	background: linear-gradient(267.48deg, #ECECD5 56.22%, #D7D7B9 130.03%);
+}
+
+.footer_text {
+	position: absolute;
+	right: 800px;
+	font-family: 'Spectral SC';
+	font-weight: 300;
+	font-size: 130px;
+	text-transform: uppercase;
+	text-align: center;
+	color: rgba(94, 92, 90, 0.03);
+	z-index: 1;
+	cursor: default;
+	transform:rotate(-15deg)
+}
+
+footer a {
+	text-decoration: none;
+	line-height: 20px;
+	color: #424242;
+}
+
+.footer_flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.footer_contact, .footer_menu, .footer_mailing {
+	margin-top: 64px;
+}
+
+.footer_contact {
+	width: 428px;
+	height: 260px;
+}
+
+.footer_contact img {
+	margin-bottom: 52px;
+}
+
+.footer_list li::before {
+	vertical-align: middle;
+	padding-right: 11px;	
+}
+.footer_tel::before {
+	content: url('../svg/footer/01_phone.svg');
+}
+.footer_adress::before {
+	content: url('../svg/footer/02_map.svg');
+	margin-left: 4px;
+}
+.footer_time::before {
+	content: url('../svg/footer/03_time.svg');
+}
+.footer_insta::before {
+	content: url('../svg/footer/04_insta.svg');
+}
+
+.footer_list li:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.footer_menu {
+	width: 210px;
+	height: 380px;
+	z-index: 100;
+}
+
+.footer_menu a {
+	font-weight: 600;
+}
+
+.footer_menu a:hover {
+	font-size: 18px;
+	border-bottom: 2px solid #976464;
+}
+
+.footer_menu li:not(:last-child) {
+	margin-bottom: 50px;
+}
+
+.footer_mailing {
+	width: 480px;
+	height: 260px;
+	position: relative;
+}
+
+.footer_button {
+	margin-bottom: 8px;
+}
+
+.footer_mailing > p {
+	font-weight: 600;
+	margin-bottom: 31px;
+
+}
+
+.footer_mailing_attention {
+	font-size: 12px;
+	line-height: 17px;
+	color: #525252;
+	margin-bottom: 40px;
+}
+
+.footer_mailing_copyright {
+	line-height: 22px;
+	color: #525252;
+}
+
+.footer_mailing input {
+	height: 30px;
+	padding-right: 170px;
+	border: 1px solid #BDBDBD;
+	border-radius: 46px;
+	margin-bottom: 11px;
+}
+
+.footer_mailing button {
+	width: 220px;
+	height: 52px;
+	position: absolute;
+	right: 40px;
+	color: #FFFFFF;
+	background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+	line-height: 24px;
+	text-transform: uppercase;
+	border-radius: 46px;
+}
+
+
+
+/* =========================================== */
+/* ====DELIVERY / BONUS / WARANTY STYLES====== */
+/* =========================================== */
+
+/* breadcrumbs */
+
+	#breadcrumbs{
+		overflow: hidden;
+		width: 100%;
+	}
+	#breadcrumbs a{
+		padding: .7em 1em .7em 2em;
+		float: left;
+		color: #424242;
+		position: relative;
+	}
+	#breadcrumbs a::after
+	{
+		content: "/";
+		position: absolute;
+		top: 50%;
+		margin-top: -.5em;
+		right: -1em;
+	}
+	#breadcrumbs .current,
+	#breadcrumbs .current:hover{
+		font-weight: bold;
+		background: none;
+	}
+	
+	#breadcrumbs .current::after,
+	#breadcrumbs .current::before{
+		content: normal;
+	}
+
+/* Main */
+
+.container_flex {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 64px;
+}
+
+.aside_catalogue {
+	margin-right: 82px;
+}
+
+
+.aside_text {
+	margin: 64px 0 40px;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 43px;
+	text-transform: uppercase;
+	color: #424242;
+}
+
+.aside_block {
+	width: 390px;
+	height: 100px;
+	box-shadow: 5px 5px 30px rgba(68, 68, 68, 0.15);
+	border-radius: 20px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.aside_block:hover {
+	transform: scale(1.1);
+	background-color: ;
+	background: linear-gradient(59.75deg, #C5C5A8 -2.61%, #E2E1CF 76.3%, #E2E1CF 76.3%);
+}
+
+.aside_block  h2 {
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	text-transform: uppercase;
+	color: #424242;
+	padding: 40px 100px 38px 49px;
+}
+
+.aside_block img {
+	position: absolute;
+	top: 4px;
+	right: 20px;
+}
+
+.delivery_text_big {
+	margin: 48px 0 40px;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 43px;
+	text-transform: uppercase;
+	color: #424242;
+}
+
+.dtb {
+	margin-top: 64px;
+}
+
+.delivery_text_small {
+	width: 900px;
+	font-size: 18px;
+	line-height: 27px;
+	color: #424242;
+	margin-bottom: 30px;
+}
+
+/* =========================================== */
+/* ==================BASKET=================== */
+/* =========================================== */
+
