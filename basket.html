@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/jquery.datetimepicker.css"/>
+    <script src="script/jquery.datetimepicker.full.js"></script>
     <link rel="stylesheet" href="style/style.css">
     <title>Хобби Арт</title>
 </head>
@@ -65,8 +68,36 @@
                     </ul>
                 
                 
-                    <div class="">
+                    <div class="basket_flex">
+                        <div class="basket_form">
+                            <h2>Способ получения</h2>
+                                <p><input class="user_city" type="text" form="basket_form" name="user_city" placeholder="Город" required></p>
 
+                                <ul class="send_choose">
+                                    <li> <input type="radio" form="basket_form" name="send" value="pochta" id="pochta" checked> </li>
+                                    <label for="pochta">Почта России</label>
+                                    <li> <input type="radio" form="basket_form" name="send"  value="sdek" id="sdek"> </li>
+                                    <label for="sdek">СДЭК</label>
+                                    <li> <input type="radio" form="basket_form" name="send"  value="dhl" id="dhl"> </li>
+                                    <label for="dhl">DHL</label>
+                                    <li> <input type="radio" form="basket_form" name="send" value="ems" id="ems"> </li>
+                                    <label for="ems" >EMS</label>
+                                </ul>
+                                <ul class="basket_list">
+                                    <li><input class="user_street" type="text" form="basket_form" name="user_street" placeholder="Улица" required></li>
+                                    <li><input class="user_building" type="text" form="basket_form" name="user_building" placeholder="Дом" required></li>
+                                    <li> <input class="user_flat" type="text" form="basket_form" name="user_flat" placeholder="Квартира" required></li>
+                                </ul>
+                                <p><textarea name="" id=""  placeholder="Добавить комментарий"></textarea></p>
+                                <p><input class="user_date" type="text" value="" id="datetimepicker" name="datetimepicker" placeholder="Выберите дату и время"></p>
+                            
+                                <h2>Данные получателя</h2>
+
+
+
+
+                            </form>
+                        </div>
                     </div>
 
 
@@ -120,6 +151,20 @@
             </div>
         </footer>
     </div>
+    <script>
+        $.datetimepicker.setLocale('ru');
+        $('#datetimepicker').datetimepicker({
+        dayOfWeekStart : 1,
+        lang:'ru',
+        format:'d M Y H:i',
+        disabledDates:['2016/09/21','2016/09/29'],
+        startDate: 0,
+        step:30,
+        minDate:0,
+        allowTimes:['09:00', '10:00', '11:00', '12:00', '13:00', '14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00'],
+        disabledWeekDays:[0,6]
+        });
+    </script>
 <script src="script/script.js"></script>
 </body>
 </html>
