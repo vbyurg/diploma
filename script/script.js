@@ -48,6 +48,9 @@ document.querySelector(".phone").addEventListener("keyup", function(){
 
 //card_baskey buttons
 
+if (document.querySelector('.card_form')) {
+
+
 function calculateValues(e) {
 
     let item = $('#Col');
@@ -88,3 +91,4 @@ function calculateValues(e) {
     });
     $("#Col").on('change', calculateValues);
     });
+}
