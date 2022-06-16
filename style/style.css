@@ -951,6 +951,52 @@ footer a {
 }
 
 /* =========================================== */
-/* ==================BASKET=================== */
+/* ==================CARD=================== */
 /* =========================================== */
-
+.bigimage {
+    line-height: 0;
+    margin-bottom: 16px;
+}
+.bigimage img {
+    cursor: pointer;
+}
+.mini {
+    width: 410px;
+    padding: 0 20px;
+    position: relative;
+}
+.mini > div {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.mini > span {
+    position: absolute;
+    top: 0;
+    font-size: 48px;
+    line-height: 50px;
+    color: gray;
+    cursor: pointer;
+}
+.mini > span:hover {
+    color: red;
+}
+.mini > span.disabled {
+    color: lightgray;
+}
+.gal_left {
+    left: 0;
+}
+.gal_right {
+    right: 0;
+}
+.rail {
+    height: 50px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    gap: 10px;
+}
+.rail img {
+    cursor: pointer;
+}
