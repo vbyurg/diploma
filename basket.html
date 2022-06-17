@@ -67,8 +67,8 @@
                         <li><a href="basket.html" class="current">Корзина</a><li>
                     </ul>
                 
-                
                     <div class="basket_flex">
+
                         <div class="basket_form">
                             <h2>Способ получения</h2>
                                 <p><input class="user_city" type="text" form="basket_form" name="user_city" placeholder="Город" required></p>
@@ -86,22 +86,74 @@
                                 <ul class="basket_list">
                                     <li><input class="user_street" type="text" form="basket_form" name="user_street" placeholder="Улица" required></li>
                                     <li><input class="user_building" type="text" form="basket_form" name="user_building" placeholder="Дом" required></li>
-                                    <li> <input class="user_flat" type="text" form="basket_form" name="user_flat" placeholder="Квартира" required></li>
+                                    <li> <input class="user_flat" type="text" form="basket_form" name="user_flat" placeholder="Квартира"></li>
                                 </ul>
-                                <p><textarea name="" id=""  placeholder="Добавить комментарий"></textarea></p>
-                                <p><input class="user_date" type="text" value="" id="datetimepicker" name="datetimepicker" placeholder="Выберите дату и время"></p>
+                                <p><textarea name="comments" id=""  placeholder="Добавить комментарий" form="basket_form"></textarea></p>
+                                <p><input class="user_date" type="text" value="" id="datetimepicker" name="datetimepicker" placeholder="Выберите дату и время" form="basket_form"></p>
                             
                                 <h2>Данные получателя</h2>
 
-
-
-
+                                <ul class="basket_list">
+                                    <li><input class="user_surename" type="text" form="basket_form" name="user_surename" placeholder="Фамилия" required></li>
+                                    <li><input class="user_name" type="text" form="basket_form" name="user_name" placeholder="Имя" required></li>
+                                    <li> <input class="user_fathername" type="text" form="basket_form" name="user_fathername" placeholder="Отчество" ></li>
+                                </ul>
+                                <input class="phone baske_phone" type="text" id="phone" name="phone_number" form="basket_form" placeholder="Номер телефона" required>
+                                <p class="basket_text">по этому номеру телефона мы с вяжемся с вами для подтверждения заказа</p>
+                                <input type="email" name="email_mailing" form="basket_form" placeholder="Ваш Email" required>
+                                <p class="basket_text">на эту почту вам придет письмо с составом заказа, а так же трэк-номер для его отслеживания</p>
+                                <input class="basket_check" type="checkbox" form="basket_form" value="mailing_approved">
+                                <p class="checkbox_text">* Подписаться на рассылку новинок и акций</p>
                             </form>
                         </div>
+
+                        <div class="order">
+                            <h2>Состав заказа</h2>
+                            
+                            <table>
+                                <tr>
+                                    <th><img src="img/order/01.png" alt=""></th>
+                                    <th>Шпагат Macrametr <br>4 мм, 100 нитей</th>
+                                    <td>
+                                        <form class="order_forme" action="" id="card_basket">
+                                            <input type="number" min="1" max="999" id="Col" value="1" >
+                                            <button class="button_plus" id="btnPlus" type="button"  form="card_basket">+</button>
+                                            <button class="button_minus" id="btnMinus" type="button" form="card_basket">-</button>
+                                        </form>
+                                    </td>
+                                    <td>332 &#8381;</td>
+                                    <td>100 м</td>
+                                </tr>
+                            </table>
+
+                            <div class="order_accept">
+                                <h2>Промокод</h2>
+                                <form action="" method="post" id="order_accept">
+                                    
+                                <ul class="basket_list">
+                                    <li><input class="promo" type="text" form="order_accept" name="promo" placeholder="Промокод"></li>
+                                    <li><button type="submit" value="promo_accept">активировать</button></li>
+                                </ul>
+                                </form>
+                                <p class="basket_text">У вас есть промокод? Активируйте его</p>
+                                <p class="order_text">Доступно для списания: <span>25 бонусов</span></p>
+
+                                <ul>
+                                <li><button class="order_button" id="clearbtn" type="submit" form="basket_form" value="order_accept">оформить заказ</button></li>
+                                <li>
+                                    <span id="primaryTotal">
+                                        <table>
+                                            <tr>
+                                                <td class="price" data-price="332"></td>
+                                                <td>&#8381;</td>
+                                            </tr>
+                                        </table>
+                                    </span>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-
-
-
             </div>
         </main> 
 
@@ -141,7 +193,7 @@
                 <div class="footer_mailing">
                     <p>Узнавайте первым о новинках и новостях</p>
                     <form action="" method="get" id="mailing">
-                        <input type="email" name="email_mailing" form="mailing" placeholder="Ваш Email">
+                        <input class="e" type="email" name="email_mailing" form="mailing" placeholder="Ваш Email">
                         <button class="footer_button" type="submit" form="mailing" value="aprove">подписаться</button>
                         <p class="footer_mailing_attention">* нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
                         <p class="footer_mailing_copyright">© 2012-2022 ХОББИ АРТ — официальный интернет-магазин товаров для хобби. Все права защищены. Условия использования и политика конфиденциальности</p>

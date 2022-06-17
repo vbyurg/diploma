@@ -46,7 +46,15 @@ document.querySelector(".phone").addEventListener("keyup", function(){
 });
 }
 
-//card_baskey buttons
+if (document.querySelector('.basket_flex')) {
+
+    document.querySelector(".phone").addEventListener("keyup", function(){
+        this.value = this.value.replace(/[^\d]/g, "");
+    });
+    }
+
+//card_baskey buttons +/-
+
 
 if (document.querySelector('.card_form')) {
 
@@ -62,10 +70,9 @@ function calculateValues(e) {
     let totalValue = priceValue * itemCount;
     price.text(totalValue.toFixed(2));
 
-
 }
     $(function() {
-    $("#primaryTotal").find(".price").data("price", 332);
+    $("#primaryTotal").find(".price").data("price");
     $("#btnMinus").add("#btnPlus").on('click', function(e) {
 
     let num = $('#Col');
@@ -91,4 +98,62 @@ function calculateValues(e) {
     });
     $("#Col").on('change', calculateValues);
     });
+}
+
+
+
+// basket
+
+// +/-
+
+if (document.querySelector('.order')) {
+
+
+    function calculateValues(e) {
+    
+        let item = $('#Col');
+        let itemCount = Math.round(item.val());
+        item.val(itemCount);
+        let total = $("#primaryTotal");
+        let price = total.find(".price");
+        let priceValue = price.data("price") * 1;
+        let totalValue = priceValue * itemCount;
+        price.text(totalValue.toFixed(2));
+    
+    }
+        $(function() {
+        $("#primaryTotal").find(".price").data("price");
+        $("#btnMinus").add("#btnPlus").on('click', function(e) {
+    
+        let num = $('#Col');
+        let numValue = Math.round(num.val()) * 1;
+    
+        if (numValue < num.attr("min")) {
+            numValue = num.attr("min") * 1;
+            num.val(Math.round(numValue));
+        }
+        
+        if (numValue > num.attr("max")) {
+            numValue = num.attr("max") * 1;
+            num.val(Math.round(numValue));
+        }
+    
+        if (this.id === "btnMinus") {
+            numValue--;
+        } else {
+            numValue++;
+        }
+        
+        num.val(numValue).trigger('change');
+        });
+        $("#Col").on('change', calculateValues);
+        });
+    }
+
+// clear price
+
+        if (document.getElementById('clearbtn')) {
+        document.getElementById("clearbtn").onclick = function(e) {
+        document.getElementById("primaryTotal").textContent = "";
+    } 
 }
