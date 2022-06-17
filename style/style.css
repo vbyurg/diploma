@@ -1230,6 +1230,14 @@ input[type="number"]::-webkit-inner-spin-button {
 	margin-left: 40px;
 }
 
+.table_basket th {
+	padding-left: 40px;
+}
+
+.table_basket .thrash {
+	padding-left: 40px;
+}
+
 .basket_list button {
 	width: 231px;
 	height: 50px;
@@ -1291,3 +1299,63 @@ input[type="number"]::-webkit-inner-spin-button {
 	display: inline-block;
 	width: 150px;
 }
+
+/* =========================================== */
+/* ============ACCOUNT PAGE=================== */
+/* =========================================== */
+
+.content {
+	margin-bottom: 64px;
+}
+
+.content img {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #ffffff;
+	border-radius: 50px;
+	margin-bottom: 20px;
+}
+
+.content li {
+	display: inline-block;
+	margin: 0 0 20px 20px;
+	vertical-align: middle;
+	font-size: 18px;
+	color: #424242;
+	
+}
+
+.content h2 {
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 43px;
+	text-transform: uppercase;
+	color: #424242;
+	margin: 84px 0 100px 20px;
+}
+
+.spoiler-title {
+	display: block;
+	padding:10px;
+	text-decoration:none;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	color: #BDBDBD;
+	}
+
+.spoiler-block {
+	margin-top:10px; 
+}
+
+
+.spoiler-content {
+	display:none;  
+	padding:15px 20px; 
+	border:1px solid #ccc; 
+	margin-top:5px;
+	background:#F0F0F0; /
+}
+
+	
+

@@ -53,40 +53,28 @@ if (document.querySelector('.basket_flex')) {
     });
     }
 
-//card_baskey buttons +/-
+//card_basket buttons +/-
 
 
 if (document.querySelector('.card_form')) {
 
-
 function calculateValues(e) {
-
+    
     let item = $('#Col');
-    let itemCount = Math.round(item.val());
+    let itemCount = item.val();
     item.val(itemCount);
-    let total = $("#primaryTotal");
-    let price = total.find(".price");
+    let price = $("#primaryTotal .price");;
     let priceValue = price.data("price") * 1;
     let totalValue = priceValue * itemCount;
     price.text(totalValue.toFixed(2));
 
 }
     $(function() {
-    $("#primaryTotal").find(".price").data("price");
+    $("#primaryTotal .price").data("price");
     $("#btnMinus").add("#btnPlus").on('click', function(e) {
 
     let num = $('#Col');
-    let numValue = Math.round(num.val()) * 1;
-
-    if (numValue < num.attr("min")) {
-        numValue = num.attr("min") * 1;
-        num.val(Math.round(numValue));
-    }
-    
-    if (numValue > num.attr("max")) {
-        numValue = num.attr("max") * 1;
-        num.val(Math.round(numValue));
-    }
+    let numValue = num.val() * 1;
 
     if (this.id === "btnMinus") {
         numValue--;
@@ -94,12 +82,21 @@ function calculateValues(e) {
         numValue++;
     }
     
+    if (numValue < num.attr("min")) {
+        numValue = num.attr("min") * 1;
+    }
+    
+    if (numValue > num.attr("max")) {
+        numValue = num.attr("max") * 1;
+    }
+
     num.val(numValue).trigger('change');
     });
     $("#Col").on('change', calculateValues);
     });
-}
 
+    calculateValues();
+}
 
 
 // basket
@@ -112,31 +109,20 @@ if (document.querySelector('.order')) {
     function calculateValues(e) {
     
         let item = $('#Col');
-        let itemCount = Math.round(item.val());
+        let itemCount = item.val();
         item.val(itemCount);
-        let total = $("#primaryTotal");
-        let price = total.find(".price");
+        let price = $("#primaryTotal .price");;
         let priceValue = price.data("price") * 1;
         let totalValue = priceValue * itemCount;
         price.text(totalValue.toFixed(2));
     
     }
         $(function() {
-        $("#primaryTotal").find(".price").data("price");
+        $("#primaryTotal .price").data("price");
         $("#btnMinus").add("#btnPlus").on('click', function(e) {
     
         let num = $('#Col');
-        let numValue = Math.round(num.val()) * 1;
-    
-        if (numValue < num.attr("min")) {
-            numValue = num.attr("min") * 1;
-            num.val(Math.round(numValue));
-        }
-        
-        if (numValue > num.attr("max")) {
-            numValue = num.attr("max") * 1;
-            num.val(Math.round(numValue));
-        }
+        let numValue = num.val() * 1;
     
         if (this.id === "btnMinus") {
             numValue--;
@@ -144,16 +130,27 @@ if (document.querySelector('.order')) {
             numValue++;
         }
         
+        if (numValue < num.attr("min")) {
+            numValue = num.attr("min") * 1;
+        }
+        
+        if (numValue > num.attr("max")) {
+            numValue = num.attr("max") * 1;
+        }
+
         num.val(numValue).trigger('change');
         });
         $("#Col").on('change', calculateValues);
         });
+
+        calculateValues();
     }
 
 // clear price
 
-        if (document.getElementById('clearbtn')) {
-        document.getElementById("clearbtn").onclick = function(e) {
-        document.getElementById("primaryTotal").textContent = "";
-    } 
-}
+        if ($('clearbtn')) {
+        document.getElementById('clearbtn').onclick = function(e) {
+        $("#primaryTotal .price").html('');
+        $(".number").val(1);
+        } 
+    }

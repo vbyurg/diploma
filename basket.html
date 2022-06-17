@@ -72,7 +72,7 @@
                         <div class="basket_form">
                             <h2>Способ получения</h2>
                                 <p><input class="user_city" type="text" form="basket_form" name="user_city" placeholder="Город" required></p>
-
+                            <form>
                                 <ul class="send_choose">
                                     <li> <input type="radio" form="basket_form" name="send" value="pochta" id="pochta" checked> </li>
                                     <label for="pochta">Почта России</label>
@@ -110,19 +110,20 @@
                         <div class="order">
                             <h2>Состав заказа</h2>
                             
-                            <table>
+                            <table class="table_basket">
                                 <tr>
                                     <th><img src="img/order/01.png" alt=""></th>
                                     <th>Шпагат Macrametr <br>4 мм, 100 нитей</th>
                                     <td>
-                                        <form class="order_forme" action="" id="card_basket">
-                                            <input type="number" min="1" max="999" id="Col" value="1" >
+                                        <form class="order_form" action="" id="card_basket">
+                                            <input class="number" 
+                                            type="number" min="1" max="999" id="Col" value="1" name="Col">
                                             <button class="button_plus" id="btnPlus" type="button"  form="card_basket">+</button>
                                             <button class="button_minus" id="btnMinus" type="button" form="card_basket">-</button>
                                         </form>
                                     </td>
-                                    <td>332 &#8381;</td>
-                                    <td>100 м</td>
+                                    <!-- <td>332 &#8381;</td> -->
+                                    <td><button class="thrash" id="clearbtn"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                                 </tr>
                             </table>
 
@@ -132,14 +133,14 @@
                                     
                                 <ul class="basket_list">
                                     <li><input class="promo" type="text" form="order_accept" name="promo" placeholder="Промокод"></li>
-                                    <li><button type="submit" value="promo_accept">активировать</button></li>
+                                    <li><button type="submit" value="promo_accept" form="order_accept">активировать</button></li>
                                 </ul>
                                 </form>
                                 <p class="basket_text">У вас есть промокод? Активируйте его</p>
                                 <p class="order_text">Доступно для списания: <span>25 бонусов</span></p>
 
                                 <ul>
-                                <li><button class="order_button" id="clearbtn" type="submit" form="basket_form" value="order_accept">оформить заказ</button></li>
+                                <li><button class="order_button" type="submit" form="basket_form" value="order_accept">оформить заказ</button></li>
                                 <li>
                                     <span id="primaryTotal">
                                         <table>
@@ -185,7 +186,7 @@
                     <ul>
                         <li><a href="delivery.html">Оплата и доставка</a></li>
                         <li><a href="company.html">Контакты</a></li>
-                        <li><a href="">Личный кабинет</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
                         <li><a href="bonus.html">Бонусная программа</a></li>
                     </ul>
                 </div>
