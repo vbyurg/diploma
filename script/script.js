@@ -148,9 +148,11 @@ if (document.querySelector('.order')) {
 
 // clear price
 
+        if (document.querySelector('.table_basket')) {
         if ($('clearbtn')) {
         document.getElementById('clearbtn').onclick = function(e) {
         $("#primaryTotal .price").html('');
         $(".number").val(1);
         } 
     }
+}
