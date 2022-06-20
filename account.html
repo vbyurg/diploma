@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/jquery.datetimepicker.css"/>
+    <script src="script/jquery.datetimepicker.full.js"></script>
     <link rel="stylesheet" href="style/style.css">
     <title>Хобби Арт</title>
-    <script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
-</head>
 <body>
     <div class="wraper">
         <header>
@@ -97,39 +98,78 @@
                     
                     
                     <div class="content">
-                        
+
                         <h2>личный кабинет</h2>
                         <ul>
                             <li><img src="img/photo.jpeg" alt="user_photo"> </li>
                             <li>Виктор Бюрг</li>
                         </ul>
 
+                        <form action="" method="post" id="user_form">
                         <div class="spoiler-block">
                             <a href="" class="spoiler-title">Мои данные</a>
                                 <div class="spoiler-content"> 
-                                Привет! Если вы видите этот текст, значит скорре всего ваш спойлер работает :)</br>
-                                Вы можете заменить этот текст на любой другой.
+                                    <div class="user_flex">
+                                    <ul class="user_list">
+                                        <li><input type="text" form="user_form" name="user_surename" placeholder="Фамилия" required></li>
+                                        <li><input type="text" form="user_form" name="user_name" placeholder="Имя" required></li>
+                                        <li> <input type="text" form="user_form" name="user_fathername" placeholder="Отчество" ></li>
+                                        <li><input class="user_birth" type="text" value="" id="datetimepicker" name="datetimepicker" placeholder="Дата рождения" form="user_form"></li>
+                                    </ul>
+
+                                    <ul class="user_list">
+                                        <li><input type="number" form="user_form" name="user_phone" placeholder="Телефон" required></li>
+                                        
+                                        <input class="user_email" type="email" name="user_email" form="user_form" placeholder="Email" required>
+
+                                        <li> <input type="text" form="user_form" name="adrres" placeholder="Адрес" ></li>
+                                        <li><input id="userPassword" type="password" autocomplete="current-password" form="user_form" name="user_password" placeholder="Пароль" ></li>
+                                    </ul>
+                                    <button class="save_button" type="submit" name="save_data" form="form="user_form"">сохранить данные</button>
+                                </div>
+                               
                                 </div> 
                             </div>
-                            
+                        </form>
                             <div class="spoiler-block">
                                 <a href="" class="spoiler-title">Бонусный счет</a>
                                 <div class="spoiler-content"> 
-                                    О! И второй спойлер тоже работает! :)<br />
-                                    Ну надо же!
+                                    <h3>Бонусный счет</h3>
+                                    <p>На вашем счете <span>112 бонусов</span> , которые вы можете потратить.</p>
                                 </div> 
                             </div>
                             
                             <div class="spoiler-block">
                                 <a href="" class="spoiler-title">Рассылка</a>
                                 <div class="spoiler-content"> 
-                                        Круто! И этот работает!
+                                    <h3>Узнавайте первым о новинках и новостях</h3>
+                                    <p>Вы не подписаны на рассылку</p>
+                                    <form action="" method="get" id="mailing">
+                                        <input type="email" name="email_mailing" form="mailing" placeholder="Ваш Email">
+                                        <button class="footer_button" type="submit" form="mailing" value="aprove">подписаться</button>
+                                        <p class="footer_mailing_attention">* нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+                                    </form>
                                 </div> 
                             </div>
                             <div class="spoiler-block">
                                 <a href="" class="spoiler-title">История заказов</a>
                                 <div class="spoiler-content"> 
-                                        Круто! И этот работает!
+                                        <ul>
+                                            <li><img class="spoiler_image" src="img/adv_slider/01.png" alt="picture"></li>
+                                            <li>450 &#8381;</li>
+                                            <li>1 шт</li>
+                                        </ul>
+                                        <ul>
+                                            <li><img class="spoiler_image" src="img/adv_slider/02.png" alt="picture"></li>
+                                            <li>437 &#8381;</li>
+                                            <li>4 шт</li>
+                                        </ul>
+                                        <ul>
+                                            <li><img class="spoiler_image" src="img/adv_slider/03.png" alt="picture"></li>
+                                            <li>500 &#8381;</li>
+                                            <li>11 шт</li>
+                                        </ul>
+                                        
                                 </div> 
                             </div>
                         
@@ -168,7 +208,7 @@
                     <ul>
                         <li><a href="delivery.html">Оплата и доставка</a></li>
                         <li><a href="company.html">Контакты</a></li>
-                        <li><a href="">Личный кабинет</a></li>
+                        <li><a href="account.html">Личный кабинет</a></li>
                         <li><a href="bonus.html">Бонусная программа</a></li>
                     </ul>
                 </div>
@@ -187,7 +227,7 @@
         </footer>
     </div>
 
-<script src="script/script.js"></script>
+
 <!-- account spoiler -->
 <script type="text/javascript"> 
     $(document).ready(function(){ 
@@ -196,6 +236,21 @@
     return false;
     });
     });
+
+    $.datetimepicker.setLocale('ru');
+        $('#datetimepicker').datetimepicker({
+        dayOfWeekStart : 1,
+        lang:'ru',
+        format:'d M Y H:i',
+        disabledDates:['2016/09/21','2016/09/29'],
+        startDate: 0,
+        step:30,
+        minDate: false,
+        allowTimes:['09:00', '10:00', '11:00', '12:00', '13:00', '14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00'],
+        disabledWeekDays:[0,6]
+        });
+
     </script>
+    <script src="script/script.js"></script>
 </body>
 </html>
