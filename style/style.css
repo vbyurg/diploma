@@ -82,6 +82,7 @@ img {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	background: #FAF9F9;
 }
 
 .container {
@@ -1735,7 +1736,9 @@ input[type="number"]::-webkit-inner-spin-button {
 /* =========================================== */
 
 .catalogue_flex{
-	margin-top: 44px;
+	margin: 44px 0 200px;
+	display: flex;
+	flex-direction: row;
 }
 
 .catalogue_flex ul {
@@ -1743,7 +1746,7 @@ input[type="number"]::-webkit-inner-spin-button {
 	padding-bottom: 20px;
 }
 
-.catalogue_flex p {
+.title_p{
 	margin: 20px 0 10px;
 	font-weight: 600;
 	font-size: 16px;
@@ -1763,4 +1766,96 @@ input[type="number"]::-webkit-inner-spin-button {
 	vertical-align: middle;
 }
 
-.
+.button_flex {
+	display: flex;
+	flex-direction: column;
+}
+
+.submit, .reset {
+	width: 228px;
+	height: 49px;
+	border: 1px solid #BDBDBD;
+	border-radius: 46px;
+	font-size: 14px;
+	line-height: 17px;
+	color: #BDBDBD;
+	margin-top: 32px;
+}
+
+.submit:hover, .reset:hover {
+	background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	color: #FFFFFF;
+}
+.cards {
+	margin-left: 60px;
+	display: flex;
+	flex-direction: row;
+}
+
+.product_card {
+	width: 245px;
+	height: 420px;
+	box-shadow: 0px 0px 30px rgba(68, 68, 68, 0.05);
+	border-radius: 20px;
+	background: #FFFFFF;
+	margin-right: 30px;
+}
+
+.product_card img {
+	display: block;
+	margin: 0 auto;
+	padding: 20px 0 25px;
+}
+
+.product_card p {
+	padding: 0 50px 18px 30px;
+}
+
+.text {
+	font-size: 16px;
+	line-height: 17px;
+	color: #424242;
+}
+
+.price {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+	color: #424242;		
+}
+
+.card_btn {
+	width: 184px;
+	height: 49px;
+	border: 1px solid #BDBDBD;
+	border-radius: 46px;
+	font-size: 14px;
+	line-height: 17px;
+	color: #BDBDBD;
+	margin: 16px 30px 30px 30px;
+}
+
+.card_btn:hover {
+	background: linear-gradient(102.48deg, #976464 -29.03%, #CFA5A5 97.75%);
+	color: #FFFFFF;
+}
+
+.cards {
+	display: flex;
+	flex-direction: column;
+}
+
+.first {
+	display: flex;
+	flex-direction: row;
+	margin: 30px 0 30px 40px;
+}
+
+.second {
+	display: flex;
+	flex-direction: row;
+	margin: 30px 0 0 40px;
+}
