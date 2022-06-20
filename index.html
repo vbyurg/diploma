@@ -47,7 +47,9 @@
                                     <button type="submit" form="S"></button>
                                 </form>
                             </div>
-                            <!-- <div class="nav-account"><a href="#">Войти</a></div> -->
+
+
+                            <!--  -->
                             <div class="nav-account button js-button-campaign"><a href="#">Войти</a>
                             </div>
 
@@ -70,7 +72,35 @@
                                             <div class="js-button-campaign">
                                                 <ul>
                                                 <li><p>Вы еще не зарегистрированы?</p></li>
-                                                <li><a class="acc_reg_link" >регистрация</a>
+                                                <li>
+                                                    <div class="js-button-reg"><a class="acc_reg_link" >Регистрация</a> </div>
+                                                    <div class="overlay-reg js-overlay-reg">
+                                                        <div class="popup-reg js-popup-campaign-reg">
+                                                            <form action="" id="reg_form">
+                                                            <h2>регистрация</h2>
+                                                            <div class="reg_flex">
+                                                                
+                                                                <ul class="reg_list">
+                                                                    <li><input type="text" form="reg_form" name="user_name" placeholder="Имя" required></li>
+                                                                    <li><input type="text" form="reg_form" name="user_surename" placeholder="Фамилия" required></li>
+                                                                    <li> <input type="text" form="reg_form" name="user_fathername" placeholder="Отчество" ></li>
+                                                                    <li><input type="number" form="reg_form" name="user_phone" placeholder="Телефон" required></li>
+                                                                </ul>
+                            
+                                                                <ul class="reg_list">
+                                                                    <li><input class="reg_email" type="email" name="user_email" form="reg_form" placeholder="Email" required></li>
+                                                                    <li> <input type="text" form="reg_form" name="adrres" placeholder="Адрес" ></li>
+                                                                    <li><input id="userPassword" type="password" autocomplete="current-password" form="user_form" name="user_password" placeholder="Придумайте пароль" ></li>
+                                                                    <li><input id="userPassword" type="password" autocomplete="current-password" form="user_form" name="confirm_password" placeholder="Повторите пароль" ></li>
+                                                                </ul>
+                                                                
+                                                            </div>
+                                                            <button class="reg_button" type="submit" name="save_reg" form="reg_form">зарегистрироваться</button>
+                                                            </form>
+                                                        <div class="close-popup-reg js-close-campaign-reg"></div>
+                                                        </div>
+                                                    </div>
+
                                                 </li>
                                                 </ul>
                                             </div>
@@ -79,16 +109,7 @@
                                     <div class="close-popup js-close-campaign"></div>
                                 </div>
                             </div>
-                            
-                           
-                      <div class="js-button-reg"> </div>
-
-                            <div class="overlay js-overlay-reg">
-                                <div class="popup js-popup-campaign-reg">
-                                    
-                                    <div class="close-popup js-close-campaign-reg"></div>
-                                </div>
-                            </div>
+                            <!--  -->
 
 
                             <div class="nav-basket"><a href="basket.html">Корзина</a></div>
