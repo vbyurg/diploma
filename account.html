@@ -344,13 +344,15 @@
 
 
     <!-- account spoiler -->
-    <script type="text/javascript">
+    <script>
         $(document).ready(function () {
             $('.spoiler-title').click(function () {
+                $("div[class^='spoiler-content']").hide('normal');
                 $(this).parent().children('div.spoiler-content').toggle('fast');
                 return false;
             });
         });
+
 
         $.datetimepicker.setLocale('ru');
         $('#datetimepicker').datetimepicker({
